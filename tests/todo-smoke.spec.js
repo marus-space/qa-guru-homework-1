@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('TodoMVC smoke', () => {
+test.describe('проверить работу менеджера задач TodoMVC', () => {
   test('добавить новую задачу', async ({ page }) => {
     await page.goto('https://todomvc.com/examples/vue/dist/#/');
 
