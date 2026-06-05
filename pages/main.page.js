@@ -5,6 +5,7 @@ export class MainPage {
     this.signUpLink = page.getByRole('link', { name: 'Sign up' });
     this.loginLink = page.getByRole('link', { name: 'Login' });
     this.articlePreviewLinks = page.getByRole('link').and(page.locator('.preview-link'));
+    this.firstArticleName = this.articlePreviewLinks.first().locator('h1');
     this.articleAuthorsLinks = page.getByRole('link').and(page.locator('.author'));
   }
 
@@ -29,7 +30,7 @@ export class MainPage {
   }
 
   async getFirstArticleName() {
-    return await this.articlePreviewLinks.first().locator('h1').textContent();
+    return await this.firstArticleName.textContent();
   }
 
   async clickFirstArticlePreviewLink() {

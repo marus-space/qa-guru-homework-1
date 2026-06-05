@@ -8,6 +8,7 @@ export class AuthenticatedMainPage extends MainPage {
     this.profileLink = this.profileDropdown.getByRole('link', { name: 'Profile' });
     this.globalFeedButton = page.getByRole('button', { name: 'Global Feed' });
     this.addToFavoritesButtons = page.locator('.article-preview').getByRole('button');
+    this.firstAddToFavoritesButtonCount = this.addToFavoritesButtons.first().locator('.counter');
     this.newArticleLink = page.getByRole('link', { name: 'New Article' });
   }
 
@@ -40,7 +41,7 @@ export class AuthenticatedMainPage extends MainPage {
   }
 
   async getFirstAddToFavoritesButtonCount() {
-    const text = await this.addToFavoritesButtons.first().locator('.counter').textContent();
+    const text = await this.firstAddToFavoritesButtonCount.textContent();
 
     return Number(text.match(/\d+/)[0]);
   }
