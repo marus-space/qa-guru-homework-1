@@ -8,6 +8,7 @@ node_modules/
 /playwright/.auth/
 .playwright-browsers/
 /ignore-tests/
+/allure-*
 
 # Environment and secrets
 .env

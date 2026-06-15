@@ -9,7 +9,8 @@
     "report": "npx playwright show-report",
     "ui": "npx playwright test --ui",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "allure:report": "rm -rf allure-results allure-report & npm t && npx allure generate && npx allure open"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,7 @@
     "@faker-js/faker": "^10.4.0",
     "@playwright/test": "^1.60.0",
     "@types/node": "^25.7.0",
+    "allure-playwright": "^3.10.0",
     "eslint": "^10.4.0",
     "eslint-plugin-playwright": "^2.10.3"
   }

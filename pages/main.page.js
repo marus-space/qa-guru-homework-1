@@ -1,3 +1,5 @@
+import { test } from '@playwright/test';
+
 export class MainPage {
   constructor({ page }) {
     this.page = page;
@@ -15,7 +17,9 @@ export class MainPage {
   }
 
   async goToRegister() {
-    await this.signUpLink.click();
+    return test.step('Нажать на кнопку Sign up', async () => {
+      await this.signUpLink.click();
+    });    
   }
 
   async goToLogin() {
